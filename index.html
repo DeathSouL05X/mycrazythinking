@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NID Information View by Ibrahim Khalil (Ibu)</title>
+    <title>NID Information View</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -170,28 +170,31 @@
             box-sizing: border-box;
             align-self: flex-start; 
         }
-      .photo-box {
+    .photo-box {
             width: 130px;
             height: 150px;
-            border: 1px solid #ccc;
-            padding: 3px;
-            background: #fff;
+            border: none; /* চারপাশের বর্ডার রিমুভ করা হলো */
+            padding: 0; /* প্যাডিং শূন্য করা হলো যাতে ছবি পুরোটা জুড়ে থাকে */
+            background: transparent;
             margin-bottom: 10px;
-            border-radius: 4px; 
+            border-radius: 12px; /* প্রথম ছবির মতো সুন্দর রাউন্ডেড কর্নার */
             box-sizing: border-box;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden; /* ছবির বাড়তি অংশ কেটে সমান করার জন্য */
+            
+            /* প্লেসহোল্ডার আইকন */
             background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ac/Avatar_placeholder_2020.svg');
             background-size: 60%; 
             background-repeat: no-repeat;
             background-position: center; 
         }
-        .photo-box img {
+       .photo-box img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            border-radius: 2px;
+            object-fit: cover; /* এটি দিলে ছবি চ্যাপ্টা না হয়ে জুম হয়ে পুরো বক্স কভার করবে */
+            border-radius: 12px;
         }
         .name-label {
             font-weight: bold;
@@ -483,8 +486,8 @@
                     
                     <tr><th colspan="2" class="section-header">ব্যক্তিগত তথ্য</th></tr>
                     <tr><td class="col-label">নাম (বাংলা)</td><td class="col-value" id="out_nameBn"></td></tr>
-                    <tr><td class="col-label">নাম (ইংরেজি)</td><td class="col-value" id="out_nameEn"></td></tr>
-                    <tr><td class="col-label">জন্ম তারিখ</td><td class="col-value" id="out_dob"></td></tr>
+                    <tr><td class="col-label">নাম (ইংরেজি)</td><td class="col-value" id="out_nameEn" style="font-weight: 530;"></td></tr>
+                    <tr><td class="col-label">জন্ম তারিখ</td><td class="col-value" id="out_dob" style="font-weight: 530;"></td></tr>
                     <tr><td class="col-label">পিতার নাম</td><td class="col-value" id="out_father"></td></tr>
                     <tr><td class="col-label">মাতার নাম</td><td class="col-value" id="out_mother"></td></tr>
                     <tr><td class="col-label">স্বামী/স্ত্রীর নাম</td><td class="col-value" id="out_spouse"></td></tr>
